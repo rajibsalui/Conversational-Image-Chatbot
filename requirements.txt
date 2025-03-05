@@ -9,3 +9,6 @@ faiss-cpu
 langchain_google_genai
 Pillow
 pymongo
+google-cloud
+google-auth
+openai

@@ -12,3 +12,4 @@ pymongo
 google-cloud
 google-auth
 openai
+google-cloud-translate

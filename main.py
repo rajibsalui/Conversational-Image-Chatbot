@@ -31,7 +31,7 @@ collection = db["chat_history"]  # Replace with your collection name
 def get_openai_response(input_text, user_prompt):
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",  
+            model="gpt-4o",  
             messages=[
                 {"role": "system", "content": input_text},
                 #{"role": "user", "content": user_prompt},
@@ -79,9 +79,9 @@ def translate_text(text, target_language):
     return None
 
 # Initialize our Streamlit app
-st.set_page_config(page_title="CREWX Chatbot")
+st.set_page_config(page_title="MaitriAI")
 
-st.header("Conversational AI Image Chatbot")
+st.header("MaitriAI - Conversational Image Chatbot")
 
 # Sidebar for image upload
 uploaded_file = st.sidebar.file_uploader("Choose an image ...", type=["jpg", "jpeg", "png"])
@@ -128,7 +128,7 @@ if submit:
       st.session_state.last_interaction_time = time.time()  # Update last interaction time
       
       response = get_openai_response(input_text,input_prompt)
-      if language_option != "None":
+      if language_option != "English":
         target_language = language_codes[language_option]
         translated_response = translate_text(response, target_language)
       else:
